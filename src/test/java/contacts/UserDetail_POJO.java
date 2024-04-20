@@ -1,11 +1,6 @@
 package contacts;
 
-import com.github.javafaker.Faker;
-
 public class UserDetail_POJO {
-
-
-
 
     private String firstName;
     private String lastName;

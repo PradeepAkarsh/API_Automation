@@ -3,7 +3,6 @@ package contacts;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import users.Utils_data;
@@ -36,11 +35,10 @@ public class PatchUpdateContact {
     public void patchUpdateContact(){
         RestAssured.baseURI = API_baseURLs.baseURL;
         RestAssured.basePath = API_baseURLs.updateContact;
-
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("firstName", Utils_data.firstName());
+        UserDetail_POJO usp = new UserDetail_POJO();
+        usp.setFirstName(Utils_data.firstName());
         Response repo = given().header("Authorization","Bearer "+ token).contentType(ContentType.JSON)
-                .log().all().body(jsonObject).patch();
+                .log().all().body(usp).patch();
         repo.prettyPrint();
         System.out.println(repo.getStatusCode());
         int statusCode = repo.getStatusCode();
