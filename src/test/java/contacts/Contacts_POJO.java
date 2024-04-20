@@ -1,27 +1,21 @@
-package pojo;
+package contacts;
 
 public class Contacts_POJO {
 
-    /*
-    * {
-    "firstName": "John",
-    "lastName": "Doe",
-    "birthdate": "1970-01-01",
-    "email": "jdoe@fake.com",
-    "phone": "8005555555",
-    "street1": "1 Main St.",
-    "street2": "Apartment A",
-    "city": "Anytown",
-    "stateProvince": "KS",
-    "postalCode": "12345",
-    "country": "USA"
-}*/
     private String firstName;
     private String lastName;
     private String birthdate;
     private String email;
     private String phone;
     private String street1;
+    private String street2;
+    private String city;
+    private String stateProvince;
+    private String postalCode;
+    private String country;
+
+
+
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -67,9 +61,5 @@ public class Contacts_POJO {
         this.country = country;
     }
 
-    private String street2;
-    private String city;
-    private String stateProvince;
-    private String postalCode;
-    private String country;
+
 }
