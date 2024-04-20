@@ -16,13 +16,13 @@ public class LogOutUser {
     String token;
     @Test(priority = 1)
     public void login(){
-        RestAssured.baseURI="https://thinking-tester-contact-list.herokuapp.com";
-        RestAssured.basePath="/users/login";
+        RestAssured.baseURI=API_baseURL.baseURL;
+        RestAssured.basePath=API_baseURL.login;
 
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("email", Utils_data.userName());
-        jsonObject.put("password", Utils_data.password());
-        Response response = given().contentType(ContentType.JSON).log().all().body(jsonObject).post();
+        LoginUser_POJO lp = new LoginUser_POJO();
+        lp.setEmail(Utils_data.userName());
+        lp.setPassword(Utils_data.password());
+        Response response = given().contentType(ContentType.JSON).log().all().body(lp).post();
         token = response.then().extract().path("token");
         System.out.println("Token "+token);
         response.prettyPrint();
@@ -32,8 +32,8 @@ public class LogOutUser {
     //https://thinking-tester-contact-list.herokuapp.com/users/logout
     @Test(priority = 2)
     public void logOutUser(){
-        RestAssured.baseURI="https://thinking-tester-contact-list.herokuapp.com";
-        RestAssured.basePath = "/users/logout";
+        RestAssured.baseURI=API_baseURL.baseURL;
+        RestAssured.basePath = API_baseURL.logOutUser;
         Response response = given().header("Authorization","Bearer "+token)
                 .contentType(ContentType.JSON).log().all().post();
         response.prettyPrint();

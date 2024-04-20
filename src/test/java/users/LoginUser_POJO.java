@@ -1,6 +1,6 @@
-package pojo;
+package users;
 
-public class Login_POJO {
+public class LoginUser_POJO {
 
     /*
     {
