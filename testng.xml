@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/AppiumFrameWork/API_Automation_New">
+        <classes>
+            <class name="contacts.AddContact">
+                <methods>
+                    <include name="login"/>
+                    <include name="addContact1"/>
+                </methods>
+            </class>
+            <class name="contacts.DeleteContact">
+                <methods>
+                    <include name="login"/>
+                    <include name="deleteContact"/>
+                </methods>
+            </class>
+            <class name="contacts.GetContact">
+                <methods>
+                    <include name="login"/>
+                    <include name="getContact"/>
+                </methods>
+            </class>
+            <class name="contacts.GetContactList">
+                <methods>
+                    <include name="login"/>
+                    <include name="getContactList"/>
+                </methods>
+            </class>
+            <class name="contacts.PatchUpdateContact">
+                <methods>
+                    <include name="login"/>
+                    <include name="patchUpdateContact"/>
+                </methods>
+            </class>
+            <class name="contacts.UpdateContact">
+                <methods>
+                    <include name="login"/>
+                    <include name="updateContact"/>
+                </methods>
+            </class>
+            <class name="users.AddUser">
+                <methods>
+                    <include name="login"/>
+                    <include name="AddUser"/>
+                </methods>
+            </class>
+            <class name="users.DeleteUser">
+                <methods>
+                    <include name="login"/>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
+            <class name="users.GetUserProfile">
+                <methods>
+                    <include name="login"/>
+                    <include name="getUserProfile"/>
+                </methods>
+            </class>
+            <class name="users.LogOutUser">
+                <methods>
+                    <include name="login"/>
+                    <include name="logOutUser"/>
+                </methods>
+            </class>
+            <class name="users.UpdateUser">
+                <methods>
+                    <include name="login"/>
+                    <include name="updateUser"/>
+                </methods>
+            </class>
+            <class name="users.UserLogin">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
